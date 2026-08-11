@@ -1,0 +1,303 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --bg-main: #E7E6E1;          /* Warm light gray background */
+  --card-bg: #FFFFFF;          /* Clean white card surface */
+  --text-primary: #1F2223;     /* Dark charcoal text */
+  --text-secondary: #64748B;   /* Muted slate text */
+  --accent-blue: #2563EB;     /* Electric Blue Accent */
+  --accent-blue-hover: #1D4ED8;
+  --input-bg: #F1F5F9;        /* Soft light slate input background */
+  --input-border: #CBD5E1;    /* Subtle border */
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg-main) !important;
+  color: var(--text-primary) !important;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+/* Force Light Cards */
+.theme-card, .glass-card, [class*="card"] {
+  background: #FFFFFF !important;
+  border: 1px solid rgba(0, 0, 0, 0.06) !important;
+  border-radius: 16px !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03) !important;
+  color: var(--text-primary) !important;
+  backdrop-filter: none !important;
+}
+
+/* Text Colors */
+h1, h2, h3, h4, h5, h6, p, span, label {
+  color: var(--text-primary);
+}
+
+/* All Inputs, Selects & Date Pickers */
+input, select, textarea, .glass-input, .theme-input {
+  background-color: var(--input-bg) !important;
+  border: 1px solid var(--input-border) !important;
+  color: var(--text-primary) !important;
+  border-radius: 10px !important;
+  padding: 10px 14px !important;
+  outline: none !important;
+  font-size: 14px !important;
+  transition: all 0.2s ease !important;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: var(--accent-blue) !important;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15) !important;
+  background-color: #FFFFFF !important;
+}
+
+input::placeholder, textarea::placeholder {
+  color: #94A3B8 !important;
+}
+
+/* Generic Inactive Toggle Buttons */
+button {
+  font-family: inherit;
+  transition: all 0.2s ease !important;
+  cursor: pointer;
+}
+
+/* Active Expense Button (Red/Rose) */
+button.active-expense,
+button[data-type="expense"].active,
+button[style*="background-color: rgb(239, 68, 68)"],
+button[style*="background: rgb(239, 68, 68)"],
+button[style*="background-color: #ef4444"],
+button[style*="background: #ef4444"] {
+  background-color: #EF4444 !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3) !important;
+  font-weight: 700 !important;
+}
+
+/* Active Income Button (Green/Emerald) */
+button.active-income,
+button[data-type="income"].active,
+button[style*="background-color: rgb(16, 185, 129)"],
+button[style*="background: rgb(16, 185, 129)"],
+button[style*="background-color: #10b981"],
+button[style*="background: #10b981"] {
+  background-color: #10B981 !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3) !important;
+  font-weight: 700 !important;
+}
+
+/* Inactive Toggle Button Styling (Hover Effect Included) */
+button:not(.active-expense):not(.active-income):not(.theme-btn-blue):not(.glass-button):not([style*="background-color: rgb(25)"]):not([style*="background-color: rgb(37, 99, 235)"]) {
+  background-color: #E2E8F0 !important;
+  color: #475569 !important;
+  border: none !important;
+  border-radius: 10px !important;
+  font-weight: 600 !important;
+}
+
+button:not(.active-expense):not(.active-income):not(.theme-btn-blue):not(.glass-button):hover {
+  background-color: #CBD5E1 !important;
+  color: #0F172A !important;
+}
+
+/* Primary Action Buttons (Submit, Save, etc.) */
+.theme-btn-blue, .glass-button {
+  background: var(--accent-blue) !important;
+  color: #FFFFFF !important;
+  border: none !important;
+  border-radius: 10px !important;
+  font-weight: 600 !important;
+  padding: 10px 18px !important;
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.25) !important;
+}
+
+.theme-btn-blue:hover, .glass-button:hover {
+  background: var(--accent-blue-hover) !important;
+  transform: translateY(-1px) !important;
+}
+
+/* Fix Recent Activity Items (Mawawala na ang Dark Navy Card) */
+div[style*="background-color: rgb(15, 23, 42)"],
+div[style*="background: rgb(15, 23, 42)"],
+div[style*="background-color: #0f172a"] {
+  background-color: #F8FAFC !important;
+  border: 1px solid #E2E8F0 !important;
+  border-radius: 12px !important;
+  color: #1F2223 !important;
+}
+
+/* Calendar icon indicator */
+::-webkit-calendar-picker-indicator {
+  filter: invert(0.4) !important;
+}
+
+/* Custom Scrollbar & Mobile Base Fixes */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background-color: #0f172a;
+  color: #e2e8f0;
+}
+
+/* Glass Card & Inputs */
+.glass-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.glass-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+.glass-input {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid #334155;
+  background: #0f172a;
+  color: #fff;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.glass-input:focus {
+  border-color: #38bdf8;
+}
+
+/* Glass Button Base */
+.glass-button {
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: none;
+  background: #38bdf8;
+  color: #0f172a;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.glass-button:hover {
+  background: #0284c7;
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.glass-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Responsive Table Wrapper */
+.responsive-table-container {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Card Stacking Container Styles */
+.auth-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 85vh;
+  padding: 24px 16px;
+  box-sizing: border-box;
+  perspective: 1000px;
+}
+
+.auth-cards-container {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  height: 460px;
+}
+
+/* Card Base with Playing Card Details */
+.auth-card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: clamp(24px, 5vw, 40px);
+  box-sizing: border-box;
+  /* Mas bouncy at smooth na cubic-bezier para sa totoong galaw ng baraha */
+  transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+              opacity 0.4s ease, 
+              box-shadow 0.4s ease, 
+              border-color 0.4s ease;
+  transform-origin: center bottom;
+  cursor: default;
+  
+  /* Modern Card Border at Depth */
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  overflow: hidden;
+}
+
+/* Watermark Background (Playing Card Vibe) */
+.auth-card::before {
+  content: '♠ ♥ ♣ ♦';
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  font-size: 70px;
+  opacity: 0.03;
+  color: #ffffff;
+  pointer-events: none;
+  letter-spacing: -5px;
+  font-family: serif;
+}
+
+/* Top Active Card */
+.auth-card.active-card {
+  z-index: 10;
+  transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
+  opacity: 1;
+  pointer-events: auto;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), 
+              0 0 15px rgba(56, 189, 248, 0.15); /* Soft glowing aura */
+  border-color: rgba(56, 189, 248, 0.3) !important;
+}
+
+/* Back Cards (Nakatagilid sa Ilalim) */
+.auth-card.inactive-card-right {
+  z-index: 2;
+  transform: translate3d(24px, -12px, -50px) rotate(8deg) scale(0.93);
+  opacity: 0.5;
+  pointer-events: auto;
+  cursor: pointer;
+  filter: brightness(0.75);
+}
+
+.auth-card.inactive-card-left {
+  z-index: 2;
+  transform: translate3d(-24px, -12px, -50px) rotate(-8deg) scale(0.93);
+  opacity: 0.5;
+  pointer-events: auto;
+  cursor: pointer;
+  filter: brightness(0.75);
+}
+
+/* Hover Effect sa Card na nasa Ilalim (Subtle Lift) */
+.auth-card.inactive-card-right:hover {
+  opacity: 0.85;
+  filter: brightness(0.9);
+  transform: translate3d(32px, -18px, -30px) rotate(11deg) scale(0.95);
+}
+
+.auth-card.inactive-card-left:hover {
+  opacity: 0.85;
+  filter: brightness(0.9);
+  transform: translate3d(-32px, -18px, -30px) rotate(-11deg) scale(0.95);
+}
